@@ -18,7 +18,8 @@ TOP_LEFT_Y = 0
 
 window=Tk()
 
-selectImage = str(filedialog.askopenfilenames())[2:-3]
+allowedFiletypes = [('PNG files', '.png')]
+selectImage = str(filedialog.askopenfilename(filetypes=allowedFiletypes))
 print(selectImage)
 selectImage2 = PhotoImage(master=window, file=selectImage)
 im = Image.open(selectImage)
